@@ -45,6 +45,7 @@ namespace MementoExample {
 
     [Memento]
     public class SuperHero {
+        private Guid id ;
         public int Age { get; set; }
         public string Name { get; set; }
 
