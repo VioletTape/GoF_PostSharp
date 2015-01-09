@@ -1,5 +1,5 @@
 namespace MementoExample.ClassicSimple {
-    public class SuperHero {
+    public class SuperHero : IMemento<SuperHeroMemento> {
         public int Age { get; set; }
         public string Name { get; set; }
 
@@ -18,5 +18,10 @@ namespace MementoExample.ClassicSimple {
             Age = memento.Age;
             Name = memento.Name;
         }
+    }
+
+    public interface IMemento<T> where T : class {
+        T CreateMemento();
+        void SetMemento(T memento);
     }
 }
