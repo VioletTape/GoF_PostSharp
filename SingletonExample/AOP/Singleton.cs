@@ -12,11 +12,14 @@ namespace SingletonExample.AOP {
         public override bool CompileTimeValidate(Type type) {
             var memberInfos = type.GetMembers(BindingFlags.Static | BindingFlags.Public);
 
+            var gotErrors = false;
+
             var instanceFieldExists = memberInfos.Any(m => m.DeclaringType == type);
             if (!instanceFieldExists) {
                 var messageText = string.Format("There should be static property with class type in the {0} class", type.Name);
                 var message = new Message(SeverityType.Error, "f001", messageText, "", "file", "", 1, 1, null);
                 Message.Write(message);
+                gotErrors = true;
             }
 
             var singleInstanceFields = memberInfos.Count(m => m.DeclaringType == type);
@@ -24,6 +27,7 @@ namespace SingletonExample.AOP {
                 var messageText = string.Format("There should be only one static property with class type in the {0} class", type.Name);
                 var message = new Message(SeverityType.Error, "f001", messageText, "", "file", "", 1, 1, null);
                 Message.Write(message);
+                gotErrors = true;
             }
 
             var constructorInfos = type.GetConstructors();
@@ -32,8 +36,9 @@ namespace SingletonExample.AOP {
                 var messageText = string.Format("All constructors for the {0} class should be not public", type.Name);
                 var message = new Message(messageLocation, SeverityType.Error, "c001", messageText, "", "file", null);
                 Message.Write(message);
+                gotErrors = true;
             }
-            return !constructorInfos.Any();
+            return gotErrors;
         }
 
         public IEnumerable<AspectInstance> ProvideAspects(object targetElement) {

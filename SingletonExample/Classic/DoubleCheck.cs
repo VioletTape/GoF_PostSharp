@@ -4,7 +4,7 @@ namespace SingletonExample.Classic {
     public sealed class MySingleton {
         private static readonly object lockObj = new object();
         private static MySingleton singleton;
-
+        
         public static MySingleton Instance {
             get {
                 if (singleton == null) {
