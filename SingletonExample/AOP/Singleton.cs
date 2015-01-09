@@ -10,7 +10,7 @@ namespace SingletonExample.AOP {
     [Serializable]
     public class Singleton : TypeLevelAspect, IAspectProvider {
         public override bool CompileTimeValidate(Type type) {
-            var memberInfos = type.GetMembers(BindingFlags.Static | BindingFlags.Public);
+            var memberInfos = type.GetProperties(BindingFlags.Static | BindingFlags.Public);
 
             var gotErrors = false;
 
@@ -24,7 +24,7 @@ namespace SingletonExample.AOP {
 
             var singleInstanceFields = memberInfos.Count(m => m.DeclaringType == type);
             if (singleInstanceFields != 1) {
-                var messageText = string.Format("There should be only one static property with class type in the {0} class", type.Name);
+                var messageText = string.Format("There should be only one static property with class type in the {0} class (was found {1})", type.Name, singleInstanceFields);
                 var message = new Message(SeverityType.Error, "f001", messageText, "", "file", "", 1, 1, null);
                 Message.Write(message);
                 gotErrors = true;
