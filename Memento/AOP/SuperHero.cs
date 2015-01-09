@@ -1,9 +1,8 @@
 using System;
 
-namespace MementoExample {
+namespace MementoExample.AOP {
     [Memento]
     public class SuperHero {
-        private Guid id ;
         public int Age { get; set; }
         public string Name { get; set; }
 

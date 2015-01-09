@@ -6,7 +6,7 @@ using PostSharp.Aspects;
 using PostSharp.Aspects.Advices;
 using PostSharp.Reflection;
 
-namespace MementoExample {
+namespace MementoExample.AOP {
     [Serializable]
     [IntroduceInterface(typeof (IMemento))]
     public class MementoAttribute : InstanceLevelAspect, IMemento {

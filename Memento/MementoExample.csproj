@@ -50,6 +50,10 @@
   <ItemGroup>
     <Compile Include="AOP\IMemento.cs" />
     <Compile Include="AOP\MementoAttribute.cs" />
+    <Compile Include="ClassicSimple\Service.cs" />
+    <Compile Include="ClassicSimple\SuperHeroMemento.cs" />
+    <Compile Include="ClassicSimple\Keeper.cs" />
+    <Compile Include="ClassicSimple\SuperHero.cs" />
     <Compile Include="Classic\MementoExampleRefactored.cs" />
     <Compile Include="Classic\Contact.cs" />
     <Compile Include="Classic\ContactKeeper.cs" />

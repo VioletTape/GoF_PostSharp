@@ -1,4 +1,5 @@
 ﻿using System;
+using MementoExample.AOP;
 
 namespace MementoExample {
     internal class Program {
