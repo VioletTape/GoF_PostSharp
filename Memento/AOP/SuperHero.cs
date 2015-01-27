@@ -1,5 +1,3 @@
-using System;
-
 namespace MementoExample.AOP {
     [Memento]
     public class SuperHero {
