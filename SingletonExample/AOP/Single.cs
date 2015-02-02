@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using PostSharp;
 using PostSharp.Aspects;
 using PostSharp.Extensibility;
 using PostSharp.Reflection;
@@ -26,8 +27,10 @@ namespace SingletonExample.AOP {
 
             var instanceFieldExists = propertyInfo.PropertyType.UnderlyingSystemType == type;
             if (!instanceFieldExists) {
+                var messageLocation = MessageLocation.Of(propertyInfo);
+
                 var messageText = string.Format("Attribute applied to the property {1} should return {0} type", type.Name, locationInfo.Name);
-                var message = new Message(SeverityType.Error, "f001", messageText, "", "file", "", 1, 1, null);
+                var message = new Message(messageLocation, SeverityType.Error, "f001", messageText, "", "file", null);
                 Message.Write(message);
             }
 
