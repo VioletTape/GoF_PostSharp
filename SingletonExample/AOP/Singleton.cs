@@ -12,17 +12,15 @@ namespace SingletonExample.AOP {
         public override bool CompileTimeValidate(Type type) {
             var memberInfos = type.GetProperties(BindingFlags.Static | BindingFlags.Public);
 
-            var gotErrors = false;
+            var isValid = true;
 
             var instanceFieldExists = memberInfos.Any(m => m.DeclaringType == type);
             if (!instanceFieldExists) {
-
                 var messageLocation = MessageLocation.Of(type);
-
                 var messageText = string.Format("There should be static property with class type in the {0} class", type.Name);
                 var message = new Message(messageLocation, SeverityType.Error, "f001", messageText, "", "file", null);
                 Message.Write(message);
-                gotErrors = true;
+                isValid = false;
             }
 
             var singleInstanceFields = memberInfos.Count(m => m.DeclaringType == type);
@@ -31,21 +29,18 @@ namespace SingletonExample.AOP {
                 var messageText = string.Format("There should be only one static property with class type in the {0} class (was found {1})", type.Name, singleInstanceFields);
                 var message = new Message(messageLocation, SeverityType.Error, "f001", messageText, "", "file", null);
                 Message.Write(message);
-                gotErrors = true;
+                isValid = false;
             }
 
             var constructorInfos = type.GetConstructors();
             if (constructorInfos.Any()) {
                 var messageLocation = MessageLocation.Of(constructorInfos.First());
-                
                 var messageText = string.Format("All constructors for the {0} class should be not public", type.Name);
                 var message = new Message(messageLocation, SeverityType.Error, "c001", messageText, "", "file", null);
-               
-
                 Message.Write(message);
-                gotErrors = true;
+                isValid = true;
             }
-            return gotErrors;
+            return isValid;
         }
 
         public IEnumerable<AspectInstance> ProvideAspects(object targetElement) {
