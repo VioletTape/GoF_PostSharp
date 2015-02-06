@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.22310.1
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdapterExample", "AdapterExample\AdapterExample.csproj", "{0939BCFF-2E6D-44A5-A42F-4AE2833E16E9}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoryExample", "FactoryExample\FactoryExample.csproj", "{59845000-B568-4C73-9ABC-59DB7478A5EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfftopicExample", "OfftopicExample\OfftopicExample.csproj", "{6D157946-1211-4A6E-AEF6-8FC76AD17994}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacadeExample", "FacadeExample\FacadeExample.csproj", "{9070D82E-F57E-443D-83D3-9DEBEB6B7EB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{6D157946-1211-4A6E-AEF6-8FC76AD17994}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D157946-1211-4A6E-AEF6-8FC76AD17994}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D157946-1211-4A6E-AEF6-8FC76AD17994}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9070D82E-F57E-443D-83D3-9DEBEB6B7EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9070D82E-F57E-443D-83D3-9DEBEB6B7EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9070D82E-F57E-443D-83D3-9DEBEB6B7EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9070D82E-F57E-443D-83D3-9DEBEB6B7EB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
