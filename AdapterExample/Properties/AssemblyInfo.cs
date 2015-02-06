@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using AdapterExample;
+using AdapterExample.AOP;
 using ConsoleApplication1123;
 
 // General Information about an assembly is controlled through the following 
