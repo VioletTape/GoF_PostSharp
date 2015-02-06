@@ -28,7 +28,6 @@ namespace SingletonExample.AOP {
             var instanceFieldExists = propertyInfo.PropertyType.UnderlyingSystemType == type;
             if (!instanceFieldExists) {
                 var messageLocation = MessageLocation.Of(propertyInfo);
-
                 var messageText = string.Format("Attribute applied to the property {1} should return {0} type", type.Name, locationInfo.Name);
                 var message = new Message(messageLocation, SeverityType.Error, "f001", messageText, "", "file", null);
                 Message.Write(message);
