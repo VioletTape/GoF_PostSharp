@@ -54,6 +54,13 @@
     <Compile Include="AOP\Handlers.cs" />
     <Compile Include="AOP\ChainOfResposibilityAttribute.cs" />
     <Compile Include="AOP\IHandler.cs" />
+    <Compile Include="Classic\InternalScheme\Address.cs" />
+    <Compile Include="Classic\InternalScheme\Client.cs" />
+    <Compile Include="Classic\InternalScheme\Handlers.cs" />
+    <Compile Include="Classic\InternalScheme\IDeliveryService.cs" />
+    <Compile Include="Classic\ExternalLinkSet\Address.cs" />
+    <Compile Include="Classic\ExternalLinkSet\Client.cs" />
+    <Compile Include="Classic\ExternalLinkSet\IDeliveryService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
