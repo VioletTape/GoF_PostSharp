@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using ConsoleApplication1123.NS;
+using AdapterExample.NS;
 
 namespace AdapterExample {
     internal class Program {

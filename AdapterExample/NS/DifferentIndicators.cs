@@ -1,4 +1,4 @@
-﻿namespace ConsoleApplication1123.NS {
+﻿namespace AdapterExample.NS {
     public class Class1 {
         public int Age { get; set; }
 

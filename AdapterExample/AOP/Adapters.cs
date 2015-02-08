@@ -1,5 +1,5 @@
 ﻿using System;
-using ConsoleApplication1123.NS;
+using AdapterExample.NS;
 
 namespace AdapterExample.AOP {
         [Serializable]
