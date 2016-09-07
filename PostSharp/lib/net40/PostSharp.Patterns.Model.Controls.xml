@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>PostSharp.Patterns.Model.Controls</name>
+  </assembly>
+  <members>
+    <member name="T:PostSharp.Patterns.Model.Controls.RedoButton">
+      <summary>
+            A typical implementation of a Redo button, with an optional and expandable list of operations that can be redone.
+            </summary>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.RedoButton.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:PostSharp.Patterns.Model.Controls.RedoButton" /> class.
+            </summary>
+    </member>
+    <member name="T:PostSharp.Patterns.Model.Controls.RedoCommand">
+      <summary>
+            A command that redoes a single operation in a <see cref="T:PostSharp.Patterns.Recording.Recorder" />.
+            </summary>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.RedoCommand.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:PostSharp.Patterns.Model.Controls.RedoCommand" /> class and binds it to the <see cref="P:PostSharp.Patterns.Recording.RecordingServices.DefaultRecorder" />.
+            </summary>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.RedoCommand.#ctor(PostSharp.Patterns.Recording.Recorder)">
+      <summary>
+            Initializes a new instance of the <see cref="T:PostSharp.Patterns.Model.Controls.UndoCommand" /> class and specifies to which <see cref="T:PostSharp.Patterns.Recording.Recorder" /> it should be bound.
+            </summary>
+      <param name="recorder">The <see cref="T:PostSharp.Patterns.Recording.Recorder" /> to which the new <see cref="T:PostSharp.Patterns.Model.Controls.RedoCommand" /> should be bound.</param>
+    </member>
+    <member name="T:PostSharp.Patterns.Model.Controls.StringEscaper">
+      <summary>
+            Implements an <see cref="T:System.Windows.Data.IValueConverter" /> that escapes strings by changing <c>_</c> into <c>__</c>.
+            </summary>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.StringEscaper.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>PostSharp.Patterns.Model.Controls.StringEscaper</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.StringEscaper.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+      <summary>Converts a value. </summary>
+      <param name="value">The value produced by the binding source.</param>
+      <param name="targetType">The type of the binding target property.</param>
+      <param name="parameter">The converter parameter to use.</param>
+      <param name="culture">The culture to use in the converter.</param>
+      <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.StringEscaper.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+      <summary>Converts a value. </summary>
+      <param name="value">The value that is produced by the binding target.</param>
+      <param name="targetType">The type to convert to.</param>
+      <param name="parameter">The converter parameter to use.</param>
+      <param name="culture">The culture to use in the converter.</param>
+      <returns>A converted value. If the method returns null, the valid null value is used.</returns>
+    </member>
+    <member name="T:PostSharp.Patterns.Model.Controls.UndoButton">
+      <summary>
+            A typical implementation of an Undo button, with an optional and expandable list of operations that can be undone.
+            </summary>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.UndoButton.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:PostSharp.Patterns.Model.Controls.UndoButton" /> class.
+            </summary>
+    </member>
+    <member name="T:PostSharp.Patterns.Model.Controls.UndoCommand">
+      <summary>
+            A command that undoes a single operation in a <see cref="T:PostSharp.Patterns.Recording.Recorder" />.
+            </summary>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.UndoCommand.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:PostSharp.Patterns.Model.Controls.UndoCommand" /> class and binds it to the <see cref="P:PostSharp.Patterns.Recording.RecordingServices.DefaultRecorder" />.
+            </summary>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.UndoCommand.#ctor(PostSharp.Patterns.Recording.Recorder)">
+      <summary>
+            Initializes a new instance of the <see cref="T:PostSharp.Patterns.Model.Controls.UndoCommand" /> class and specifies to which <see cref="T:PostSharp.Patterns.Recording.Recorder" /> it should be bound.
+            </summary>
+      <param name="recorder">The <see cref="T:PostSharp.Patterns.Recording.Recorder" /> to which the new <see cref="T:PostSharp.Patterns.Model.Controls.UndoCommand" /> should be bound.</param>
+    </member>
+    <member name="T:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase">
+      <summary>
+            Base class for <see cref="T:PostSharp.Patterns.Model.Controls.UndoButton" /> and <see cref="T:PostSharp.Patterns.Model.Controls.RedoButton" />.
+            </summary>
+    </member>
+    <member name="P:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.IsEnabledCore">
+      <summary>Gets the value of the <see cref="P:System.Windows.ContentElement.IsEnabled" /> property.</summary>
+      <returns>true if the control is enabled; otherwise, false.</returns>
+    </member>
+    <member name="P:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.IsListEnabled">
+      <summary>
+            Determines whether the button can be extended and display the list of operations that can be undone or redone.
+            </summary>
+    </member>
+    <member name="F:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.IsListEnabledProperty">
+      <summary>
+            Definition of the <see cref="P:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.IsListEnabled" /> property.
+            </summary>
+    </member>
+    <member name="P:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.IsListExpanded">
+      <summary>
+            Determines whether the detailed list of operations is currently expanded.
+            </summary>
+    </member>
+    <member name="P:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.MaxOperationsCount">
+      <summary>
+            Gets or sets the maximal number of operations displayed by the current button.
+            </summary>
+    </member>
+    <member name="F:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.MaxOperationsCountProperty">
+      <summary>
+            Definition of the <see cref="P:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.MaxOperationsCount" /> property.
+            </summary>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.OnApplyTemplate">
+      <summary>When overridden in a derived class, is invoked whenever application code or internal processes call <see cref="M:System.Windows.FrameworkElement.ApplyTemplate" />.</summary>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.OnClick">
+      <summary>Called when a <see cref="T:System.Windows.Controls.Button" /> is clicked. </summary>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.OnKeyDown(System.Windows.Input.KeyEventArgs)">
+      <summary>Provides class handling for the <see cref="E:System.Windows.UIElement.KeyDown" /> routed event that occurs when the user presses a key while this control has focus.</summary>
+      <param name="e">The event data.</param>
+      <param name="eventArgs">
+        <markup>
+          <include item="SMCMissingParamTag">
+            <parameter>param</parameter>
+            <parameter>eventArgs</parameter>
+            <parameter>M:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.OnKeyDown(System.Windows.Input.KeyEventArgs)</parameter>
+          </include>
+        </markup>
+      </param>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.OnPropertyChanged(System.String)">
+      <summary>
+            Raises the <see cref="E:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.PropertyChanged" /> event.
+            </summary>
+      <param name="propertyName">Name of the changed property.</param>
+    </member>
+    <member name="P:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.Operations">
+      <summary>
+            Gets the list of operations displayed by the current button when in expanded state.
+            </summary>
+    </member>
+    <member name="E:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.PropertyChanged">
+      <summary>
+        <markup>
+          <include item="SMCMissingTag">
+            <parameter>summary</parameter>
+            <parameter>E:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.PropertyChanged</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.Recorder">
+      <summary>
+            Gets or sets the <see cref="T:PostSharp.Patterns.Recording.Recorder" /> bound to the current control.
+            </summary>
+    </member>
+    <member name="F:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.RecorderProperty">
+      <summary>
+            Definition of the <see cref="P:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.Recorder" /> dependency property.
+            </summary>
+    </member>
+    <member name="P:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.UndoCommand">
+      <summary>
+            Gets or sets the command used execute the Undo action.
+            </summary>
+    </member>
+    <member name="F:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.UndoCommandProperty">
+      <summary>
+            Definition of the <see cref="P:PostSharp.Patterns.Model.Controls.UndoRedoButtonBase.UndoCommand" /> dependency property.
+            </summary>
+    </member>
+    <member name="T:PostSharp.Patterns.Model.Controls.UndoRedoCommandBase">
+      <summary>
+            Base class for <see cref="T:PostSharp.Patterns.Model.Controls.UndoCommand" /> and <see cref="T:PostSharp.Patterns.Model.Controls.RedoCommand" />.
+            </summary>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.UndoRedoCommandBase.CanExecute(System.Object)">
+      <summary>Defines the method that determines whether the command can execute in its current state.</summary>
+      <param name="parameter">Data used by the command.  If the command does not require data to be passed, this object can be set to null.</param>
+      <returns>true if this command can be executed; otherwise, false.</returns>
+    </member>
+    <member name="E:PostSharp.Patterns.Model.Controls.UndoRedoCommandBase.CanExecuteChanged">
+      <summary>Occurs when changes occur that affect whether or not the command should execute.</summary>
+    </member>
+    <member name="M:PostSharp.Patterns.Model.Controls.UndoRedoCommandBase.Execute(System.Object)">
+      <summary>Defines the method to be called when the command is invoked.</summary>
+      <param name="parameter">Data used by the command.  If the command does not require data to be passed, this object can be set to null.</param>
+    </member>
+    <member name="P:PostSharp.Patterns.Model.Controls.UndoRedoCommandBase.Recorder">
+      <summary>
+            Gets the <see cref="T:PostSharp.Patterns.Recording.Recorder" /> bound to this command.
+            </summary>
+    </member>
+    <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+      <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+    </member>
+    <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper" /> class.</summary>
+    </member>
+  </members>
+</doc>

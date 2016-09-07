@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdapterExample", "AdapterExample\AdapterExample.csproj", "{0939BCFF-2E6D-44A5-A42F-4AE2833E16E9}"
 EndProject
@@ -24,6 +24,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfftopicExample", "OfftopicExample\OfftopicExample.csproj", "{6D157946-1211-4A6E-AEF6-8FC76AD17994}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacadeExample", "FacadeExample\FacadeExample.csproj", "{9070D82E-F57E-443D-83D3-9DEBEB6B7EB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F8336BF2-00A5-4B64-8DC3-DFB0CF5C674F}"
+	ProjectSection(SolutionItems) = preProject
+		PatternsWithAOP.pssln = PatternsWithAOP.pssln
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
