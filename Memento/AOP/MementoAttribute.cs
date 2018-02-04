@@ -24,9 +24,9 @@ namespace MementoExample.AOP {
                                               | BindingFlags.NonPublic;
 
             memberInfos = type.FindMembers(memberTypes,
-                bindingFlags,
-                null,
-                null)
+                                           bindingFlags,
+                                           null,
+                                           null)
                               .ToList().ConvertAll(i => new LocationInfo((FieldInfo) i));
 
             base.CompileTimeInitialize(type, aspectInfo);
